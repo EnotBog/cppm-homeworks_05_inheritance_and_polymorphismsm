@@ -76,18 +76,18 @@ protected:
 class Triangle : public Figure //треугольник скц
 {
 public:
-	Triangle()
+	Triangle():Figure(3,"Треугольник")
 	{
-		sides_count = 3, name = "Треугольник:";
+	
 	}
-	Triangle(int a,int b,int c, int A, int B, int C):Triangle(a,b,c,A,B,C,3, "Треугольник:")
+	Triangle(const int a, const int b, const int c, const int A, const int B, const int C):Triangle(a,b,c,A,B,C,3, "Треугольник:")
 	{
 
 	}
 
 protected:
 
-	Triangle(int a, int b, int c, int A, int B, int C, int sides_count, std::string name)
+	Triangle (const int a, const int b, const int c, const int A, const int B, const int C, const int sides_count, const std::string name)
 	{
 		this->a = a; this->b = b; this->c = c;
 		this->A = A; this->B = B; this->C = C;
@@ -206,9 +206,9 @@ protected:
 class Quadrangle : public Figure
 {
 public:
-	Quadrangle() { sides_count = 4, name = "Четырехугольник:"; }
+	Quadrangle():Figure(4, "Четырехугольник:") {}
 
-	Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D):Quadrangle(a,b,c,d,A,B,C,D,4, "Четырехугольник:") {}
+	Quadrangle(const int a, const int b, const int c, const int d, const int A, const int B, const int C, const int D):Quadrangle(a,b,c,d,A,B,C,D,4, "Четырехугольник:") {}
 
 protected:
 
@@ -290,6 +290,7 @@ class My_Rectangle : public Parallelogram // Прямоугольник
 public:
 	My_Rectangle(int a, int b) :Parallelogram(a, b, 90, 90,4, "Прямоугольник: ")
 	{
+
 	}
 
 protected:
