@@ -13,16 +13,20 @@ class Figure
 {
 public:
 
-	Figure() { sides_count = 0; this->name = "Фигура:"; };
+	Figure(): sides_count(0),name ("Фигура:") {};
 
 	
 	
-	virtual void print_info() 
+	void print_info() 
 	{
-
+		std::cout << name << "\n" << check << "\n" << "Количество сторон: " << sides_count << "\n" << get_sides() << get_corn() << "" << " " << " " << "\n"; // 
 	}
 
 protected:
+	Figure(int sides_count, std::string name):sides_count(3),name ("Фигура:")
+	{
+
+	}
 
 	virtual bool check_bool() 
 	{
@@ -72,11 +76,14 @@ protected:
 class Triangle : public Figure //треугольник скц
 {
 public:
-	Triangle() { sides_count = 3; }
+	Triangle()
+	{
+		sides_count = 3, name = "Треугольник:";
+	}
 	Triangle(int a,int b,int c, int A, int B, int C):Triangle(a,b,c,A,B,C,3, "Треугольник:")
 	{
 
-	};
+	}
 
 protected:
 
@@ -101,10 +108,10 @@ protected:
 		return buf;
 	}
 
-	void print_info() override
-	{
-		std::cout <<name <<"\n" << check << "\n" << "Количество сторон: " << sides_count << "\n" << Triangle::get_sides() << Triangle::get_corn() << "" << " " << " " << "\n"; // 
-	}
+	//void print_info() override
+	//{
+	//	std::cout <<name <<"\n" << check << "\n" << "Количество сторон: " << sides_count << "\n" << Triangle::get_sides() << Triangle::get_corn() << "" << " " << " " << "\n"; // 
+	//}
 
 	bool check_bool() override
 	{
@@ -224,10 +231,10 @@ protected:
 		std::string buf = { "Углы: A=" + std::to_string(A) + " B=" + std::to_string(B) + " C=" + std::to_string(C) + " D=" + std::to_string(D) + "\n" };
 		return buf;
 	}
-	void print_info() override
-	{
-		std::cout << this->name << "\n" << this->check << "\n" << "Количество сторон: " << sides_count << "\n"  << Quadrangle::get_sides() << Quadrangle::get_corn() << "" << "\n"; // 
-	}
+	//void print_info() override
+	//{
+	//	std::cout << this->name << "\n" << this->check << "\n" << "Количество сторон: " << sides_count << "\n"  << Quadrangle::get_sides() << Quadrangle::get_corn() << "" << "\n"; // 
+	//}
 
 	bool check_bool() override
 	{

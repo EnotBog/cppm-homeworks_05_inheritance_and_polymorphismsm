@@ -17,10 +17,11 @@ public:
 
 
 
-	virtual void print_info()
+	void print_info()
 	{
-		
+		std::cout << name << "\n" << get_sides() << get_corn() << "" << " " << " " << "\n"; // 
 	}
+
 
 protected:
 
@@ -91,11 +92,7 @@ protected:
 		return buf;
 	}
 
-	void print_info() override
-	{
-		std::cout << name << "\n" << Triangle::get_sides() << Triangle::get_corn() << "" << " " << " " << "\n"; // 
-	}
-
+	
 	int a = 0, b = 0, c = 0;
 	int A = 0, B = 0, C = 0;
 
@@ -160,10 +157,10 @@ protected:
 		std::string buf = { "Углы: A=" + std::to_string(A) + " B=" + std::to_string(B) + " C=" + std::to_string(C) + " D=" + std::to_string(D) + "\n" };
 		return buf;
 	}
-	void print_info() override
-	{
-		std::cout << name << "\n" << Quadrangle::get_sides() << Quadrangle::get_corn() << "" << "\n"; // 
-	}
+	//void print_info() override
+	//{
+	//	std::cout << name << "\n" << Quadrangle::get_sides() << Quadrangle::get_corn() << "" << "\n"; // 
+	//}
 
 	int a = 0, b = 0, c = 0, d = 0;
 	int A = 0, B = 0, C = 0, D = 0;
