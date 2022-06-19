@@ -23,7 +23,7 @@ public:
 	}
 
 protected:
-	Figure(int sides_count, std::string name):sides_count(3),name ("Фигура:")
+	Figure(const int &sides_count,const std::string &name):sides_count(3),name ("Фигура:")
 	{
 
 	}
@@ -80,14 +80,14 @@ public:
 	{
 	
 	}
-	Triangle(const int a, const int b, const int c, const int A, const int B, const int C):Triangle(a,b,c,A,B,C,3, "Треугольник:")
+	Triangle(const int &a, const int &b, const int &c, const int &A, const int &B, const int &C):Triangle(a,b,c,A,B,C,3, "Треугольник:")
 	{
 
 	}
 
 protected:
 
-	Triangle (const int a, const int b, const int c, const int A, const int B, const int C, const int sides_count, const std::string name)
+	Triangle (const int &a, const int &b, const int &c, const int &A, const int &B, const int &C, const int &sides_count, const std::string &name)
 	{
 		this->a = a; this->b = b; this->c = c;
 		this->A = A; this->B = B; this->C = C;
@@ -208,11 +208,11 @@ class Quadrangle : public Figure
 public:
 	Quadrangle():Figure(4, "Четырехугольник:") {}
 
-	Quadrangle(const int a, const int b, const int c, const int d, const int A, const int B, const int C, const int D):Quadrangle(a,b,c,d,A,B,C,D,4, "Четырехугольник:") {}
+	Quadrangle(const int &a, const int &b, const int &c, const int &d, const int &A, const int &B, const int &C, const int &D):Quadrangle(a,b,c,d,A,B,C,D,4, "Четырехугольник:") {}
 
 protected:
 
-	Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D,int sides_count, std::string name)
+	Quadrangle(const int &a, const int &b, const int &c, const int &d, const int &A, const int &B, const int &C, const int &D, const int &sides_count, const std::string &name)
 	{
 		this->a = a; this->b = b; this->c = c; this->d = d;
 		this->A = A; this->B = B; this->C = C; this->D = D;
